@@ -29,4 +29,18 @@ public class AnagramTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void testGetAnagramsNoMatches() {
+		List<String> expected = Arrays.asList();
+		List<String> actual = anagram.getAnagrams("abc", Arrays.asList("def", "ghi", "jkl"));
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetAnagramsCaseInsensitive() {
+		List<String> expected = Arrays.asList("alert", "alter", "later");
+		List<String> actual = anagram.getAnagrams("LaRtE", Arrays.asList("alert", "alter", "later", "tomato", "heart"));
+		assertEquals(expected, actual);
+	}
+
 }
