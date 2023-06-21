@@ -43,4 +43,25 @@ public class AnagramTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void testGetAnagramsDifferentLength() {
+		List<String> expected = Arrays.asList();
+		List<String> actual = anagram.getAnagrams("short", Arrays.asList("shorter", "shortest", "shorty"));
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetAnagramsEmptyList() {
+		List<String> expected = Arrays.asList();
+		List<String> actual = anagram.getAnagrams("abc", Arrays.asList());
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetAnagramsEmptyString() {
+		List<String> expected = Arrays.asList();
+		List<String> actual = anagram.getAnagrams("", Arrays.asList("alert", "alter", "later"));
+		assertEquals(expected, actual);
+	}
+
 }
